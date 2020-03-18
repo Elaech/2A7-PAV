@@ -1,0 +1,9 @@
+3
+C:\Users\minut\IdeaProjects\PAV5\src\com\jetbrains\Main.java
+1
+author
+Minut Mihai Dimitrie
+C:\Users\minut\IdeaProjects\PAV5\src\compulsory\Catalog.java
+0
+C:\Users\minut\IdeaProjects\PAV5\src\compulsory\Document.java
+0
