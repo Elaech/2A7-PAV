@@ -17,7 +17,7 @@ public class ControlPanel extends JPanel {
         canvas = c;
         mainFrame = mf;
         setBackground(Color.GRAY);
-        setLayout(new GridLayout(1,4,5,5));
+        setLayout(new GridLayout(1,6,5,5));
         setBorder(BorderFactory.createEmptyBorder(5,5,5,5));
         Button saveButton = new Button("Save");
         Button loadButton = new Button("Load");
@@ -53,7 +53,39 @@ public class ControlPanel extends JPanel {
         });
 
         add(saveButton);
+
+        /**
+         * Optional Load via file chooser button
+         */
+        Button loadChooserButton = new Button("Load@Location");
+        loadChooserButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                canvas.loadChooser();
+            }
+        });
+        add(loadChooserButton);
+        /**
+         * end of optional
+         */
         add(loadButton);
+
+        /**
+         * Optional Save via file chooser button
+         */
+        Button saveChooserButton = new Button("Save@Location");
+        saveChooserButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               canvas.saveChooser();
+            }
+        });
+        add(saveChooserButton);
+
+
+        /**
+         * end of optional
+         */
         add(resetButton);
         add(exitButton);
     }
