@@ -5,6 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Control Panel contains the specified buttons for save load reset and exit
+ * that implement listeners that effectively call methods from the main frame
+ * and canvas in order to save, load , reset, and exit.
+ */
 public class ControlPanel extends JPanel {
     Canvas canvas;
     MainFrame mainFrame;

@@ -15,11 +15,21 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.List;
 
+/**
+ * Clasa ce actioneaza ca un canvas pentru desene si deseneaza figuri dupa configuratiile
+ * unei instante de ConfigurationPanel atunci cand se apasa pe mouse
+ */
 public class Canvas extends JPanel {
     private int x,y,radius;
     ConfigurationPanel configPanel;
     BufferedImage image;
     Graphics2D graphics2D;
+
+    /**
+     * init function for the canvas setting brackground border and a listener
+     * A buffered image will be used for the drawings
+     * @param configurationPanel used to specify parameters for the shape being drawn
+     */
     Canvas(ConfigurationPanel configurationPanel){
         configPanel = configurationPanel;
         setBorder(BorderFactory.createBevelBorder(BevelBorder.RAISED));
@@ -42,6 +52,11 @@ public class Canvas extends JPanel {
         });
     }
 
+    /**
+     * overrided the paintComponent such that the behaviour will be interpreted through our image
+     * so we can add multiple shapes without refreshing
+     * @param g graphics of this pane
+     */
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -51,17 +66,29 @@ public class Canvas extends JPanel {
         }
         g.drawImage(image,0,0,this);
     }
+
+    /**
+     * Puts a large white rectangle over the image
+     */
     public void reset(){
         graphics2D.setColor(Color.WHITE);
         graphics2D.fillPolygon(new RegularPolygon(0,0,5000,4));
         repaint();
     }
 
+    /**
+     * we simply save the image that we have drawn into onto the disk
+     */
     public void save(){
         try{
             ImageIO.write(image,"PNG",new File("test.png"));
         }catch (IOException exceptionx){ System.err.println(exceptionx);}
     }
+
+    /**
+     * In order to load an image we just get the image from the path
+     * and create its graphics that will replace our existing ones for this pane
+     */
     public void load(){
         reset();
         try {

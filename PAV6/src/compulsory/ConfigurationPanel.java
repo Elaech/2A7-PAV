@@ -5,6 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * configuration panel contine 3 butoane si labels pentru acestea sub layout de grid
+ * butoanele au functionalitate de a schimba dimensiunea , numarul de laturi si tipul de colorare
+ * al figurii ce va urma fi desenate
+ */
 public class ConfigurationPanel extends JPanel {
     private Integer size = 20;
     private Integer edges =3;
@@ -78,6 +83,11 @@ public class ConfigurationPanel extends JPanel {
         return randomColor;
     }
 
+    /**
+     * metoda folosita pentru a citit printr-un popup un int
+     * in caz de orice inafara de int se re emite pop up ul
+     * @return
+     */
     public int getUserIntInput(){
         int value = -1;
         boolean ok = false;
@@ -96,6 +106,10 @@ public class ConfigurationPanel extends JPanel {
         return value;
     }
 
+    /**
+     * metoda folosita pentru a specifica intr-un pop up metoda de colorare
+     * @return
+     */
     private boolean getUserColorInput() {
 
         int res= JOptionPane.showConfirmDialog(null,"Random color?");
