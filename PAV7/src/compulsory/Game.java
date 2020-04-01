@@ -46,7 +46,7 @@ public class Game {
      * si un mesaj de final (Ex: P1 has won!)
      */
     public void start(){
-        board.getPrintTokens();
+        System.out.println(board.getPrintTokens());
         new Thread(player1).start();
         new Thread(player2).start();
         while(true){

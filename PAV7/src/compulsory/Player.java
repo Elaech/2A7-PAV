@@ -107,7 +107,6 @@ public class Player implements Runnable {
         String toBePrinted = "";
         if(!board.isEmpty()) {
             try {
-//                synchronized (this) {
                     Token token = board.getToken(0);
                     tokensAcquired.add(token);
                     toBePrinted+= board.getPrintTokens();
