@@ -31,3 +31,4 @@ Mentiuni finale
 ###############################################
 Am considerat ca Compulsory si Optional sunt foarte apropiate una de cealalta asa ca le-am explicat mai sus deodata.
 Mai multe detalii de implementare in cod.
+Dependintele sunt trecute in gitignore deci pentru a verifica proiectul va trebui asteptata configurarea initiala.
